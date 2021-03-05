@@ -1,0 +1,93 @@
+header {
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+
+    .header__container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        transform: translateY(50px);
+    }
+
+    .circle {
+        width: 400px;
+        height: 400px;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+
+        background: $color-yellow;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 5;
+    }
+
+    .line1 {
+        width: auto;
+        height: 5px;
+        left: 0px; top: 50%;
+
+        background: $color-red;
+
+        position: absolute;
+        z-index: 6;
+
+        transition: width 2s;
+        animation: 2s line-anim1 forwards;
+    }
+    .line2 {
+        width: auto;
+        height: 5px;
+        left: 0px; top: 60%;
+
+        background: $color-red;
+
+        position: absolute;
+        z-index: 1;
+
+        transition: width 2s;
+        animation: 2s line-anim2 forwards;
+    }
+    .line3 {
+        width: auto;
+        height: 5px;
+        right: 0px; top: 30%;
+
+        background: $color-red;
+
+        position: absolute;
+        z-index: 1;
+
+        transition: width 2s;
+        animation: 2s line-anim3 forwards;
+    }
+}
+
+@keyframes line-anim1 {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 1200px;
+    }
+}
+
+@keyframes line-anim2 {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 1400px;
+    }
+}
+
+@keyframes line-anim3 {
+    0% {
+        width: 0px;
+    }
+    100% {
+        width: 800px;
+    }
+}

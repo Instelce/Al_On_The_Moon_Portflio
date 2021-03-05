@@ -1,0 +1,102 @@
+// Variable
+$color-dark-blue: rgb(2, 48, 71);
+$color-green: rgb(42, 157, 143);
+$color-red: rgb(229, 107, 111);
+$color-yellow: rgb(255, 183, 3); 
+$color-light-pink: rgb(255, 229, 236);
+$color-white: rgb(255, 255, 255);
+
+$font-main: 'Poppins', sans-serif;
+$font-secondary: 'Open Sans Condensed', sans-serif;
+
+// Import 
+@import 'libs/reset.scss';
+@import 'topbar.scss';
+@import 'header.scss';
+@import 'section.scss';
+@import 'project_desc.scss';
+@import 'lightbox.scss';
+@import 'footer.scss';
+
+
+// Main Style
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: auto;
+
+    position: relative;
+    overflow-x: hidden !important;
+
+    background: $color-dark-blue;
+
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 16px;
+    color: $color-white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+    border-radius: none;
+    outline: none;
+}
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 12%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+// Scrollbar
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 1px;
+}
+::-webkit-scrollbar-thumb {
+    background: $color-red;
+    border-radius: 10px;
+}
+
+// Button
+.btn {
+    width: auto;
+    padding: 12px 20px;
+
+    display: inline-block;
+
+    color: $color-dark-blue;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition: box-shadow 0.3s, color 0.3s;
+}
+
+.btn-red {
+    background: $color-red;
+
+    &:hover {
+        color: $color-light-pink;
+        box-shadow: 5px 5px 0px -2px $color-light-pink;
+    }
+}
