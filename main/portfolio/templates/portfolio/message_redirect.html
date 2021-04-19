@@ -1,0 +1,8 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="thanks">
+        <h2>Merci pour le message</h2>
+        <a class="btn btn-red" href="{% url 'portfolio:home' %}">Retourner sur le site</a>
+    </section>
+{% endblock content %}

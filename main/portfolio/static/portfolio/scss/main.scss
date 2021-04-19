@@ -1,9 +1,9 @@
 // Variable
-$color-dark-blue: rgb(2, 48, 71);
-$color-green: rgb(42, 157, 143);
-$color-red: rgb(229, 107, 111);
-$color-yellow: rgb(255, 183, 3); 
-$color-light-pink: rgb(255, 229, 236);
+$color-dark-blue: #023047;
+$color-green: hsl(173, 58%, 39%);
+$color-red: #e56b6f;
+$color-yellow: #ffb703; 
+$color-light-pink: #ffe5ec;
 $color-white: rgb(255, 255, 255);
 
 $font-main: 'Poppins', sans-serif;
@@ -66,7 +66,7 @@ section {
 // Scrollbar
 
 ::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
 }
 ::-webkit-scrollbar-track {
     background: transparent;

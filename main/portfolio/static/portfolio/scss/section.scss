@@ -25,7 +25,7 @@
 }
 
 // Projects section
-// ! And All Projects
+// And All Projects
 .section__projects,
 .section__allproject {
     .section__content {
@@ -47,11 +47,7 @@
 
         img {
             width: auto;
-            min-width: 600px;
-
-            float: left;
-            position: absolute;
-            top: 0; left: 0;
+            height: auto;
         }
 
         .project__name {
@@ -154,7 +150,7 @@
     .section__content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
         grid-column-gap: 10px;
         grid-row-gap: 20px;
 
@@ -236,5 +232,22 @@
             grid-column: 2;
             grid-row: 1 / 5;
         }
+    }
+}
+
+// Thanks
+.thanks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    a {
+        display: inline-block;
     }
 }
