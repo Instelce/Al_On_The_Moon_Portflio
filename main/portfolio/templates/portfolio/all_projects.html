@@ -2,8 +2,8 @@
 {% load static %}
 {% block content %}
     <!-- All Projects -->
-    <section class="section__allproject">
-        <div class="section__content">
+    <section>
+        <div class="all__projects projects__content">
             {% for project in projects %}
             <a href="{% url 'portfolio:project_detail' project.id project.name %}" class="project__card">
                 <img src="{{ project.main_image.url }}">

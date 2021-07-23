@@ -4,41 +4,51 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Al On The Moon</title>
 
     <!-- Font LINK -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     <!-- CSS LINK -->
     <link rel="stylesheet" href="{% static 'portfolio/css/main.css' %}">
 </head>
 <body>
-    <!-- Topbar -->
-    <nav class="topbar">
-        <a href="{% url 'portfolio:home' %}" class="topbar__logo">
-            <h1><span>Al</span> on the moon</h1>
-            <h6><span>Al</span>ice Beslay</h6>
-        </a>
+<!-- Topbar -->
+<nav class="navbar">
+    <a href="{% url 'portfolio:home' %}" class="navbar__brand">
+        <h1><span>Al</span> on the moon</h1>
+        <h2><span>Al</span>ice Beslay</h2>
+    </a>
 
-        <ul class="topbar__nav">
-            <li><a href="{% url 'portfolio:home' %}#projects">Projets</a></li>
-            <li><a href="{% url 'portfolio:home' %}#apropos">A propos</a></li>
-            <li><a href="{% url 'portfolio:home' %}#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <ul class="navbar__menu">
+        <li><a href="{% url 'portfolio:home' %}#projects">Projets</a></li>
+        <li><a href="{% url 'portfolio:home' %}#about">A propos</a></li>
+        <li><a href="{% url 'portfolio:home' %}#contact">Contact</a></li>
+    </ul>
 
-    {% block content %}{% endblock content %}
+    <div class="navbar__toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <g fill="#F7F7F7">
+                <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"></path>
+            </g>
+        </svg>
+    </div>
+</nav>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; Alice - 2021 / 2022</p>
-    </footer>
+{% block content %}{% endblock content %}
 
-    <!-- Script -->
-    <script src="{% static 'portfolio/js/main.js' %}"></script>
-    <script src="{% static 'portfolio/js/lightbox.js' %}" type="module"></script>
+<!-- Footer -->
+<footer>
+    <p>&copy; Alice - 2021 / 2022</p>
+</footer>
+
+<!-- Script -->
+<script src="{% static 'portfolio/js/main.js' %}"></script>
+<script src="{% static 'portfolio/js/lightbox.js' %}" type="module"></script>
 </body>
 </html>

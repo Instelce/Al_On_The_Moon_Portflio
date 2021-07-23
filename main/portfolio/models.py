@@ -4,7 +4,7 @@ from django.db import models
 class Projects(models.Model):
     main_image = models.ImageField(upload_to='projects_image/')
     name = models.CharField(max_length=80)
-    description = models.TextField(max_length=600)
+    description = models.TextField(max_length=1200)
     date = models.DateTimeField()
 
     def __str__(self):
@@ -20,8 +20,9 @@ class ProjectSecondaryImage(models.Model):
 
 
 class About(models.Model):
-    description = models.TextField(max_length=400)
-    cv = models.FileField(upload_to="cv/")
+    description = models.TextField(max_length=800)
+    cv = models.FileField(upload_to="about/cv/")
+    picture = models.ImageField(upload_to="about/picture/")
 
     def __str__(self):
         return 'About Description'

@@ -2,63 +2,69 @@
 {% load static %}
 {% block content %}
     <!-- Header -->
-    <header>
-        <div class="header__container">
-            <span class="circle"></span>
-            <span class="line1"></span>
-            <span class="line2"></span>
-            <span class="line3"></span>
-        </div>
+    <header class="header">
+        <span class="circle"></span>
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
     </header>
 
     <!-- Projects -->
-    <section id="projects" class="section__projects">
-        <h3 class="section__title">Projets</h3>
-        <div class="section__content">
-            {% for project in projects %}
-                <a href="{% url 'portfolio:project_detail' project.id project.name %}" class="project__card">
-                    <img src="{{ project.main_image.url }}">
-                    <span class="project__name">{{ project.name }}</span>
-                </a>
-            {% endfor %}
+    <section id="projects">
+        <h3>Projets</h3>
+        <div class="projects__content">
+            <div class="section__grid">
+                {% if projects %}
+                    {% for project in projects %}
+                        <a href="{% url 'portfolio:project_detail' project.id project.name %}" class="project__card">
+                            <img src="{{ project.main_image.url }}">
+                            <span>{{ project.name }}</span>
+                        </a>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <a class="link" href="{% url 'portfolio:all_projects' %}">Voir tous les projets</a>
         </div>
-        <a class="projects__link" href="{% url 'portfolio:all_projects' %}">Voir tous les projets</a>
     </section>
 
     <!-- A propos -->
-    <section id="apropos" class="section__apropos">
-        <h3 class="section__title">A propos</h3>
-        <div class="section__content">
-            <div>
-                {% if about %}
-                    <p>
-                        {{ about.description }}
-                    </p>
-                    <a class="btn btn-red" download="{{ about.cv.url }}" href="{{ about.cv.url }}">Télécharger mon cv</a>
-                {% endif %}
-            </div>
-            <div></div>
+    <section id="about">
+        <h3>A propos</h3>
+        <div class="about__content section__grid">
+            {% if about %}
+                <div>
+                    <p>{{ about.description }}</p>
+                    <a class="button__primary" download="{{ about.cv.url }}" href="{{ about.cv.url }}">Télécharger mon
+                        cv</a>
+                </div>
+                <img src="{{ about.picture.url }}">
+            {% endif %}
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section__contact">
-        <h3 class="section__title">Contact</h3>
-        <div class="section__content">
-            {% for contact in contacts %}
-                <div>
-                    <span><img src="{{ contact.image.url }}">{{ contact.name }}</span>
-                    <p>{{ contact.value }}</p>
-                </div>
-            {% endfor %}
+    <section id="contact">
+        <h3>Contact</h3>
+        <div class="contact__content">
+            <div class="contact__container">
+                {% if contacts %}
+                    {% for contact in contacts %}
+                        <div class="contact__item">
+                            <span><img src="{{ contact.image.url }}">{{ contact.name }}</span>
+                            <p>{{ contact.value }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <form method="POST" class="contact__form">
+                {% csrf_token %}
+                <input name="name" type="text" placeholder="Nom">
+                <input name="email" type="email" placeholder="Adresse email">
+                <input name="subject" type="text" placeholder="Sujet">
+                <textarea name="content" type="text" placeholder="Contenu"></textarea>
+                <input class="button__primary" type="submit">
+            </form>
         </div>
-        <form method="POST" class="contact__form">
-            {% csrf_token %}
-            <input name="name" type="text" placeholder="Nom">
-            <input name="email" type="email" placeholder="Adresse email">
-            <input name="subject" type="text" placeholder="Sujet">
-            <textarea name="content" type="text" placeholder="Contenu"></textarea>
-            <input class="btn btn-red" type="submit">
-        </form>
+
     </section>
 {% endblock content %}
